@@ -1,8 +1,9 @@
 .myntra-container {
   display: flex;
-  height: 100vh;
-  width:180vh;
+  height: 120vh;
+  width:220vh;
 }
+
 
 .sidebar {
   width: 20%;
@@ -35,6 +36,13 @@
   flex-direction: column;
   width: 100%;
 }
+.images img {
+  width: 15%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
 
 .menu-item {
   padding: 10px;
@@ -118,19 +126,27 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height:10vh;
+  width:50vh;
 }
 
 .chat-box {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #ffffff50;
   padding: 20px;
   border-radius: 5px;
+  
 }
 
 .chat-inputs {
   display: flex;
+  background-color: #ccc;
 }
 
 .chat-inputs input {
@@ -247,6 +263,16 @@
   position: absolute;
   width:30vh;
 }
+.light .myntra-container {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark mode styles */
+.dark .myntra-container {
+  background-color: #333;
+  color: #fff;
+}
 .box4{
  
   position: relative;
@@ -261,3 +287,9 @@
   font-size: 24px;
   color: var(--text-color);
 }
+/* .input-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:50vh;
+} */
