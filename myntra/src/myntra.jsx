@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './myntra.css';
 import img1 from './assets/myntra-logo.png';
 import img2 from './assets/chat.png';
@@ -18,32 +18,39 @@ import img12 from './assets/footer/foot1.png';
 import img13 from './assets/footer/foot2.png';
 import img14 from './assets/footer/foot3.png';
 import img15 from './assets/footer/foot4.png';
-import { FaSun, FaMoon } from 'react-icons/fa';
 
 function Myntra() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const storedMode = localStorage.getItem("isDarkMode");
-    return storedMode ? JSON.parse(storedMode) : false;
-  });
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.body.classList.add(savedTheme + '-mode');
+  }, []);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.body.classList.remove(theme + '-mode');
+    document.body.classList.add(newTheme + '-mode');
+    localStorage.setItem('theme', newTheme);
   };
 
   return (
-    <div className={`outer ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className="outer">
+      <button className="toggle-button" onClick={toggleTheme}>
+        Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
+      </button>
       <div className="border">
-        <div className={`myntra ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className="myntra">
           <div className="myntra-container">
             <div className="sidebar">
               <div className="logo">
-                <img src={img1} alt="Myntra" /> Myntra
+                <img src={img1} alt="Myntra" />Myntra
               </div>
-              <button className="chat-generator"><img src={img2} alt="Chat" /> Chat Generator</button>
+              <button className="chat-generator">
+                <img src={img2} alt="Chat" /> Chat Generator
+              </button>
               <div className="menu">
                 <div className="menu-item">
                   <img src={imgFeedback} alt="Feedback" /> Feedback
@@ -94,14 +101,14 @@ function Myntra() {
                 <button className="add-chat">Add New Chat</button>
               </div>
             </div>
-            <div className='box3'>
-              <h2 className='chatb'>New Chat</h2>
-              <div className='box4'>
-                <div className='b1'></div>
-                <div className='b2'></div>
-                <div className='b3'></div>
-                <div className='b4'></div>
-                <div className='b5'></div>
+            <div className="box3">
+              <h2 className="chatb">New Chat</h2>
+              <div className="box4">
+                <div className="b1"></div>
+                <div className="b2"></div>
+                <div className="b3"></div>
+                <div className="b4"></div>
+                <div className="b5"></div>
               </div>
               <div className="chat-box">
                 <div className="new-chat">
@@ -113,16 +120,13 @@ function Myntra() {
                       <img src={img15} alt="img4" />
                     </div>
                     <div className="input-box">
-                    <input type="text" placeholder="Ask me anything.." />
-                    <button>Send</button>
-                  </div>
+                      <input type="text" placeholder="Ask me anything.." />
+                      <button>Send</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button className="toggle-theme" onClick={toggleDarkMode}>
-              {isDarkMode ? <FaSun /> : <FaMoon />}
-            </button>
           </div>
         </div>
       </div>
