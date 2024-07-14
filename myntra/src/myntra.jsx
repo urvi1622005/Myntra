@@ -37,7 +37,7 @@ function Myntra() {
   };
 
   return (
-    <div className="outer">
+    <div className={`outer ${theme}-mode`}>
       <button className="toggle-button" onClick={toggleTheme}>
         Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
       </button>
@@ -55,10 +55,10 @@ function Myntra() {
                 <div className="menu-item">
                   <img src={imgFeedback} alt="Feedback" /> Feedback
                 </div>
-                <div className="menu-item1">
+                <div className="menu-item">
                   <img src={imgHistory} alt="History" /> History
                 </div>
-                <div className="menu-item2">
+                <div className="menu-item">
                   <img src={imgVirtual} alt="Virtual Dress Up" /> Virtual Dress Up
                 </div>
               </div>
