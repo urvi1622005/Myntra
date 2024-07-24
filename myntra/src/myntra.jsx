@@ -42,34 +42,34 @@ function Myntra() {
         Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
       </button>
       <div className="border">
-        <div className="myntra">
+        <main className="myntra">
           <div className="myntra-container">
-            <div className="sidebar">
-              <div className="logo">
+            <aside className="sidebar">
+              <header className="logo">
                 <img src={img1} alt="Myntra" />Myntra
-              </div>
+              </header>
               <button className="chat-generator">
                 <img src={img2} alt="Chat" /> Chat Generator
               </button>
-              <div className="menu">
-                <div className="menu-item">
+              <nav className="menu">
+                <a className="menu-item">
                   <img src={imgFeedback} alt="Feedback" /> Feedback
-                </div>
-                <div className="menu-item">
+                </a>
+                <a className="menu-item">
                   <img src={imgHistory} alt="History" /> History
-                </div>
-                <div className="menu-item">
+                </a>
+                <a className="menu-item">
                   <img src={imgVirtual} alt="Virtual Dress Up" /> Virtual Dress Up
-                </div>
-              </div>
-            </div>
-            <div className="chat-section">
-              <div className="chat-history">
+                </a>
+              </nav>
+            </aside>
+            <section className="chat-section">
+              <header className="chat-history">
                 <div className="search-bar">
                   <h2>Chat history</h2>
                   <input type="text" placeholder="Search" />
                 </div>
-                <div className="chats">
+                <article className="chats">
                   <div className="chat-item">
                     <p>Birthday party dress plan</p>
                     <p>birthday party dress for girls under 3000 rupees</p>
@@ -97,11 +97,11 @@ function Myntra() {
                       <img src={img11} alt="img3" />
                     </div>
                   </div>
-                </div>
+                </article>
                 <button className="add-chat">Add New Chat</button>
-              </div>
-            </div>
-            <div className="box3">
+              </header>
+            </section>
+            <section className="box3">
               <h2 className="chatb">New Chat</h2>
               <div className="box4">
                 <div className="b1"></div>
@@ -126,9 +126,9 @@ function Myntra() {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </div>
+        </main>
       </div>
     </div>
   );
